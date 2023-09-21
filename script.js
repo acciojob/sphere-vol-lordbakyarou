@@ -1,12 +1,20 @@
-function volume_sphere() {
-    //Write your code here
-let getRadius = document.getElementById("radius");
-	let getValue = document.getElementById("volume");
+function volume_sphere(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
-	 let getRadiu = getRadius.value;
-  let cal = getRadiu * getRadiu * 3.14;
+    let getRadius = document.getElementById("radius");
+    let getValue = document.getElementById("volume");
 
-	 getValue.value = cal;
-} 
+    let getButton = document.getElementById("submit");
 
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+    getButton.addEventListener("click", () => {
+        let getRadiu = getRadius.value;
+        let cal = getRadiu * getRadiu * 3.14;
+        getValue.value = cal;
+    });
+}
+
+window.onload = function() {
+    const form = document.getElementById('MyForm');
+    form.addEventListener('submit', volume_sphere);
+};
