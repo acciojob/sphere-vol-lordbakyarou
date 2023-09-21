@@ -9,8 +9,8 @@ function volume_sphere(event) {
 
     
         let getRadiu = getRadius.value;
-        let cal = getRadiu * getRadiu * 3.14;
-        getValue.value = cal;
+        let cal = (4/3) * Math.PI * Math.pow(getRadiu, 3);
+        getValue.value = cal.toFixed(4);
    
 	event.preventDefault();
 }
